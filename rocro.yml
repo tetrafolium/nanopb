@@ -5,8 +5,7 @@ inspecode:
       commands:
         main:
           - echo "hello"
-          - cat ./report.json
       artifacts:
-        - path: ./report.json
+        - path: ./fortify_gitrepo.fpr
       reports:
-        - path: ./report.json
+        - path: ./fortify_gitrepo.fpr
