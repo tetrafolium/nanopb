@@ -5,7 +5,12 @@ inspecode:
       commands:
         main:
           - echo "hello"
+          - sourceanalyzer -b build_id -scan -f fortify_gitrepo.fpr
+          - ReportGenerator -format sarif -source fortify_gitrepo.fpr -output fortify.sarif
+
       artifacts:
         - path: ./fortify_gitrepo.fpr
+        - path: ./fortify.sarif
+
       reports:
-        - path: ./fortify_gitrepo.fpr
+        - path: ./fortify.sarif
